@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00719A721D71E44600E175D1 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00719A711D71E44600E175D1 /* RootTabBarController.m */; };
+		00719A751D71E45800E175D1 /* FileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00719A741D71E45800E175D1 /* FileManagerViewController.m */; };
+		00719A781D71E46200E175D1 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00719A771D71E46200E175D1 /* BrowserViewController.m */; };
+		008EFED81D6DE8C000B2B3B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EFED71D6DE8C000B2B3B7 /* main.m */; };
+		008EFEDB1D6DE8C000B2B3B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EFEDA1D6DE8C000B2B3B7 /* AppDelegate.m */; };
+		008EFEE31D6DE8C000B2B3B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008EFEE21D6DE8C000B2B3B7 /* Assets.xcassets */; };
+		008EFEE61D6DE8C000B2B3B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008EFEE41D6DE8C000B2B3B7 /* LaunchScreen.storyboard */; };
+		08010CED8D3F95395962F846 /* libPods-letian_video.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B8EC83D913A5D9CF8330DA /* libPods-letian_video.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00719A6F1D71E35E00E175D1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Utils/Common.h; sourceTree = "<group>"; };
+		00719A701D71E44600E175D1 /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootTabBarController.h; path = Controller/RootTabBarController.h; sourceTree = "<group>"; };
+		00719A711D71E44600E175D1 /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootTabBarController.m; path = Controller/RootTabBarController.m; sourceTree = "<group>"; };
+		00719A731D71E45800E175D1 /* FileManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileManagerViewController.h; path = Controller/FileManager/FileManagerViewController.h; sourceTree = "<group>"; };
+		00719A741D71E45800E175D1 /* FileManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileManagerViewController.m; path = Controller/FileManager/FileManagerViewController.m; sourceTree = "<group>"; };
+		00719A761D71E46200E175D1 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = Controller/Browser/BrowserViewController.h; sourceTree = "<group>"; };
+		00719A771D71E46200E175D1 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowserViewController.m; path = Controller/Browser/BrowserViewController.m; sourceTree = "<group>"; };
+		00719A7A1D71E62B00E175D1 /* MainPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainPrefix.pch; sourceTree = "<group>"; };
+		008EFED31D6DE8C000B2B3B7 /* 糖果播放器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "糖果播放器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		008EFED71D6DE8C000B2B3B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		008EFED91D6DE8C000B2B3B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		008EFEDA1D6DE8C000B2B3B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		008EFEE21D6DE8C000B2B3B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		008EFEE51D6DE8C000B2B3B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		008EFEE71D6DE8C000B2B3B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28B8EC83D913A5D9CF8330DA /* libPods-letian_video.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-letian_video.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A3E7B00024B3633A281026F /* Pods-letian_video.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letian_video.release.xcconfig"; path = "Pods/Target Support Files/Pods-letian_video/Pods-letian_video.release.xcconfig"; sourceTree = "<group>"; };
+		EEC3052FC69BAD0E2EB52F36 /* Pods-letian_video.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letian_video.debug.xcconfig"; path = "Pods/Target Support Files/Pods-letian_video/Pods-letian_video.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		008EFED01D6DE8C000B2B3B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08010CED8D3F95395962F846 /* libPods-letian_video.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00719A6D1D71E2F600E175D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00719A701D71E44600E175D1 /* RootTabBarController.h */,
+				00719A711D71E44600E175D1 /* RootTabBarController.m */,
+				008EFEF41D71D08400B2B3B7 /* FileManager */,
+				008EFEF31D71D06900B2B3B7 /* Browser */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		00719A6E1D71E30A00E175D1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				00719A6F1D71E35E00E175D1 /* Common.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		008EFECA1D6DE8C000B2B3B7 = {
+			isa = PBXGroup;
+			children = (
+				008EFED51D6DE8C000B2B3B7 /* letian_video */,
+				008EFED41D6DE8C000B2B3B7 /* Products */,
+				ADCC239D64E4793C1044DA10 /* Pods */,
+				A741D5BFCC5648997104C224 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		008EFED41D6DE8C000B2B3B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				008EFED31D6DE8C000B2B3B7 /* 糖果播放器.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		008EFED51D6DE8C000B2B3B7 /* letian_video */ = {
+			isa = PBXGroup;
+			children = (
+				008EFED91D6DE8C000B2B3B7 /* AppDelegate.h */,
+				008EFEDA1D6DE8C000B2B3B7 /* AppDelegate.m */,
+				008EFEE21D6DE8C000B2B3B7 /* Assets.xcassets */,
+				00719A6D1D71E2F600E175D1 /* Controller */,
+				008EFEE41D6DE8C000B2B3B7 /* LaunchScreen.storyboard */,
+				008EFED61D6DE8C000B2B3B7 /* Supporting Files */,
+				00719A6E1D71E30A00E175D1 /* Utils */,
+			);
+			path = letian_video;
+			sourceTree = "<group>";
+		};
+		008EFED61D6DE8C000B2B3B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00719A7A1D71E62B00E175D1 /* MainPrefix.pch */,
+				008EFEE71D6DE8C000B2B3B7 /* Info.plist */,
+				008EFED71D6DE8C000B2B3B7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		008EFEF31D71D06900B2B3B7 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				00719A761D71E46200E175D1 /* BrowserViewController.h */,
+				00719A771D71E46200E175D1 /* BrowserViewController.m */,
+			);
+			name = Browser;
+			sourceTree = "<group>";
+		};
+		008EFEF41D71D08400B2B3B7 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				00719A731D71E45800E175D1 /* FileManagerViewController.h */,
+				00719A741D71E45800E175D1 /* FileManagerViewController.m */,
+			);
+			name = FileManager;
+			sourceTree = "<group>";
+		};
+		A741D5BFCC5648997104C224 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28B8EC83D913A5D9CF8330DA /* libPods-letian_video.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADCC239D64E4793C1044DA10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEC3052FC69BAD0E2EB52F36 /* Pods-letian_video.debug.xcconfig */,
+				6A3E7B00024B3633A281026F /* Pods-letian_video.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		008EFED21D6DE8C000B2B3B7 /* letian_video */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 008EFEEA1D6DE8C000B2B3B7 /* Build configuration list for PBXNativeTarget "letian_video" */;
+			buildPhases = (
+				90072D554CBA9085769AC704 /* [CP] Check Pods Manifest.lock */,
+				008EFECF1D6DE8C000B2B3B7 /* Sources */,
+				008EFED01D6DE8C000B2B3B7 /* Frameworks */,
+				008EFED11D6DE8C000B2B3B7 /* Resources */,
+				5F5FC8D65FD734640F86F1A9 /* [CP] Embed Pods Frameworks */,
+				44023B3A13FE506175E7415B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = letian_video;
+			productName = letian_video;
+			productReference = 008EFED31D6DE8C000B2B3B7 /* 糖果播放器.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		008EFECB1D6DE8C000B2B3B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = com.letian.video_player;
+				TargetAttributes = {
+					008EFED21D6DE8C000B2B3B7 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = A8H6JXYPQC;
+					};
+				};
+			};
+			buildConfigurationList = 008EFECE1D6DE8C000B2B3B7 /* Build configuration list for PBXProject "letian_video" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 008EFECA1D6DE8C000B2B3B7;
+			productRefGroup = 008EFED41D6DE8C000B2B3B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				008EFED21D6DE8C000B2B3B7 /* letian_video */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		008EFED11D6DE8C000B2B3B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008EFEE61D6DE8C000B2B3B7 /* LaunchScreen.storyboard in Resources */,
+				008EFEE31D6DE8C000B2B3B7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44023B3A13FE506175E7415B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-letian_video/Pods-letian_video-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5FC8D65FD734640F86F1A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-letian_video/Pods-letian_video-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90072D554CBA9085769AC704 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		008EFECF1D6DE8C000B2B3B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008EFEDB1D6DE8C000B2B3B7 /* AppDelegate.m in Sources */,
+				00719A751D71E45800E175D1 /* FileManagerViewController.m in Sources */,
+				00719A721D71E44600E175D1 /* RootTabBarController.m in Sources */,
+				008EFED81D6DE8C000B2B3B7 /* main.m in Sources */,
+				00719A781D71E46200E175D1 /* BrowserViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		008EFEE41D6DE8C000B2B3B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				008EFEE51D6DE8C000B2B3B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		008EFEE81D6DE8C000B2B3B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		008EFEE91D6DE8C000B2B3B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		008EFEEB1D6DE8C000B2B3B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC3052FC69BAD0E2EB52F36 /* Pods-letian_video.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = letian_video/MainPrefix.pch;
+				INFOPLIST_FILE = letian_video/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.letian.letian-video";
+				PRODUCT_NAME = "糖果播放器";
+			};
+			name = Debug;
+		};
+		008EFEEC1D6DE8C000B2B3B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3E7B00024B3633A281026F /* Pods-letian_video.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = letian_video/MainPrefix.pch;
+				INFOPLIST_FILE = letian_video/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.letian.letian-video";
+				PRODUCT_NAME = "糖果播放器";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		008EFECE1D6DE8C000B2B3B7 /* Build configuration list for PBXProject "letian_video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008EFEE81D6DE8C000B2B3B7 /* Debug */,
+				008EFEE91D6DE8C000B2B3B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		008EFEEA1D6DE8C000B2B3B7 /* Build configuration list for PBXNativeTarget "letian_video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008EFEEB1D6DE8C000B2B3B7 /* Debug */,
+				008EFEEC1D6DE8C000B2B3B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 008EFECB1D6DE8C000B2B3B7 /* Project object */;
+}

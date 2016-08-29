@@ -96,6 +96,7 @@
 				00719A6D1D71E2F600E175D1 /* Controller */,
 				008EFEE41D6DE8C000B2B3B7 /* LaunchScreen.storyboard */,
 				008EFED61D6DE8C000B2B3B7 /* Supporting Files */,
+				00EAD32A1D7471FF00A19F88 /* Library */,
 				00719A6E1D71E30A00E175D1 /* Utils */,
 			);
 			path = letian_video;
@@ -127,6 +128,14 @@
 				00719A741D71E45800E175D1 /* FileManagerViewController.m */,
 			);
 			name = FileManager;
+			sourceTree = "<group>";
+		};
+		00EAD32A1D7471FF00A19F88 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A741D5BFCC5648997104C224 /* Frameworks */ = {

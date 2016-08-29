@@ -48,7 +48,7 @@
 
     navC.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:normalImage selectedImage:selectImage];
 [   navC.navigationBar setBackgroundColor:AppMainColor];
-    viewController.navigationItem.title = title;
+    //viewController.navigationItem.title = title;
     [self addChildViewController:navC];
 }
 

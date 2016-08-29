@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BrowserViewController: UIViewController<UIWebViewDelegate>{
-    IBOutlet UIWebView *videoWebView;
-    IBOutlet UITextField *urlTextField;
-    UIActivityIndicatorView *activityIndicatorView;
-}
+#import <WebKit/WebKit.h>
+@interface BrowserViewController: UIViewController <UISearchBarDelegate, WKNavigationDelegate>;
 - (IBAction)buttonPress:(id) sender;
-- (void)loadWebPageWithString:(NSString*)urlString;
+- (void)loadWebPageWithUrl:(NSURL*)url;
 @end

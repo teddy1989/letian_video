@@ -7,8 +7,14 @@
 //
 
 #import "BrowserViewController.h"
+#import <WebKit/WebKit.h>
 
+@interface BrowserViewController ()
+@property(strong,nonatomic)WKWebView* videoWebView;
+@property(strong,nonatomic)UISearchBar* urlSearchBar;
+@property(strong,nonatomic)UIActivityIndicatorView* activityIndicatorView;
 
+@end
 
 @implementation BrowserViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -21,6 +27,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[self view]setBackgroundColor:[UIColor whiteColor]];
     // Do any additional setup after loading the view.
     [self initView];
 }
@@ -40,115 +48,196 @@
 
 
 -(void)initView{
+    self.navigationController.navigationBarHidden = true;
     self.navigationController.navigationBar.translucent = NO;
-    [[self view]setBackgroundColor:[UIColor redColor]];
+    
     
     
     NSInteger textHeight=44;
     NSInteger tabbarHeight=49;
     
-    urlTextField = [[UITextField alloc] init];
-    [urlTextField setDelegate:self];
-    [urlTextField setReturnKeyType:UIReturnKeyGo];
-     [urlTextField setAdjustsFontSizeToFitWidth:YES];
-    [urlTextField setText:@""];
-    [urlTextField setTextColor:[UIColor colorWithWhite:0 alpha:0.9]];
-    [urlTextField setBackgroundColor:[UIColor whiteColor]];
-    [urlTextField setAutocorrectionType:UITextAutocorrectionTypeDefault];
-    [urlTextField setKeyboardType:UIKeyboardTypeURL];
-    [urlTextField setFont:[UIFont systemFontOfSize:16]];
-    [urlTextField setPlaceholder:@"标题"];
-    [urlTextField.layer setMasksToBounds:YES];
-    [urlTextField.layer setBorderWidth:0.5];
-    [urlTextField setLeftView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, textHeight)]];
-    [urlTextField setLeftViewMode:UITextFieldViewModeAlways];
-    [urlTextField setClearButtonMode:UITextFieldViewModeAlways];
-    [urlTextField.layer setBorderColor:[[UIColor colorWithWhite:0.5 alpha:0.3] CGColor]];
+    self.urlSearchBar = [[UISearchBar alloc] init];
+    [[self urlSearchBar ] setDelegate:self];
+    [[self urlSearchBar ] setReturnKeyType:UIReturnKeyGo];
+    [[self urlSearchBar ] setText:@"www.baidu.com"];
+    [[self urlSearchBar ] setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [[self urlSearchBar ] setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [[self urlSearchBar ] setBackgroundColor:[UIColor whiteColor]];
+    [[self urlSearchBar ] setKeyboardType:UIKeyboardTypeURL];
+    [[self urlSearchBar ] setPlaceholder:@"请输入你要访问的网址"];
+    [[self urlSearchBar ].layer setMasksToBounds:YES];
+    [[self urlSearchBar ].layer setBorderWidth:0.5];
+    [[self urlSearchBar ].layer setBorderColor:[[UIColor colorWithWhite:0.5 alpha:0.3] CGColor]];
+    
+    
+    // 添加蒙版
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    aView.backgroundColor = [UIColor clearColor];
+    aView.alpha = 0.1;
+    [self.view addSubview:aView];
+    aView.tag = 10;
     
     //［urlField ］
     
-    [[self view]addSubview:urlTextField];
+    [[self view]addSubview:[self urlSearchBar ]];
     
-    videoWebView = [[UIWebView alloc]  initWithFrame:CGRectMake(0, textHeight, self.view.frame.size.width, self.view.frame.size.height-textHeight-tabbarHeight)];
-    [videoWebView setScalesPageToFit:YES];
-    [videoWebView setDelegate:self];
-    [videoWebView setOpaque:NO];
-    
-    [[self view]addSubview:videoWebView];
-    
-    //    [videoWebView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.left.and.right.mas_equalTo(0);
-    //        make.width.equalTo(self.view);
-    //            make.height.mas_equalTo(self.view.frame.size.height-40);
-    //        make.top.equalTo(urlField.mas_bottom);
-    //        make.bottom.equalTo(self.view);
-    //    }];
-    
-    
-    activityIndicatorView = [[UIActivityIndicatorView alloc]
-                             initWithFrame : CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)] ;
-    [activityIndicatorView setCenter: self.view.center] ;
-    [activityIndicatorView setActivityIndicatorViewStyle: UIActivityIndicatorViewStyleWhite] ;
-    [self.view addSubview : activityIndicatorView] ;
-    [self buttonPress:nil];
+    self.videoWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, textHeight, self.view.frame.size.width, self.view.frame.size.height-textHeight-tabbarHeight)];
+    [[self videoWebView ] setNavigationDelegate:self];
+    [[self videoWebView ] setOpaque:NO];
+    [[self videoWebView] setAllowsBackForwardNavigationGestures:YES];
     
     
     
-    [urlTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [[self urlSearchBar ] mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.mas_equalTo(0);
         make.width.equalTo(self.view);
         make.height.mas_equalTo(44);
+        make.top.mas_equalTo(20);
     }];
+    
+    [[self view]addSubview:[self videoWebView ]];
+    
+    [[self videoWebView ] mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.mas_equalTo(0);
+        make.width.equalTo(self.view);
+        make.top.equalTo([self urlSearchBar ].mas_bottom);
+        make.bottom.equalTo(self.view).offset(-44);
+    }];
+    
+    
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc]
+                                  initWithFrame : CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)] ;
+    [[self activityIndicatorView ] setCenter: self.view.center] ;
+    [[self activityIndicatorView ] setActivityIndicatorViewStyle: UIActivityIndicatorViewStyleWhite] ;
+    [self.view addSubview : [self activityIndicatorView ]] ;
+    
+    [self loadFirstPage];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    BOOL flag = NO;
-    [self buttonPress:textField];
-    return flag;
-}
-- (IBAction)buttonPress:(id) sender
+#pragma mark - searchBar代理方法
+// 添加Cancel：
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-    [urlTextField resignFirstResponder];
-    if(urlTextField.text.length>0){
-        NSString *url =@"";
-        if([urlTextField.text rangeOfString:@"://"].length>0){
-            url=urlTextField.text;
-        }else{
-            url=[@"http://" stringByAppendingString:urlTextField.text];
+    searchBar.text = @"";
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+    UIView *aView = [self.view viewWithTag:10];
+    // 移除蒙版
+    [aView removeFromSuperview];
+}
+/// 点击搜索按钮
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+    
+    UIView *aView = [self.view viewWithTag:10];
+    [aView removeFromSuperview];
+    [self loadFirstPage];
+}
+
+-(void )loadFirstPage{
+    // 创建url
+    NSURL *url = nil;
+    NSString *urlStr = [[self urlSearchBar] text];
+    
+    // 如果file://则为打开bundle本地文件，http则为网站，否则只是一般搜索关键字
+    if([urlStr hasPrefix:@"file://"]){
+        NSRange range = [urlStr rangeOfString:@"file://"];
+        NSString *fileName = [urlStr substringFromIndex:range.length];
+        url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+        // 如果是模拟器加载电脑上的文件，则用下面的代码
+        //        url = [NSURL fileURLWithPath:fileName];
+    }else if(urlStr.length>0){
+        if ([urlStr hasPrefix:@"http://"]) {
+            url=[NSURL URLWithString:urlStr];
+        } else {
+            urlStr=[NSString stringWithFormat:@"http://www.baidu.com/s?wd=%@",urlStr];
         }
-        urlTextField.text =url;
-        [self loadWebPageWithString:url];
+        urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        url=[NSURL URLWithString:urlStr];
     }
-    
+    [self loadWebPageWithUrl:url];
 }
-- (void)loadWebPageWithString:(NSString*)urlString
+
+
+- (void)loadWebPageWithUrl:(NSURL*)url
 {
-    
-    NSURL *url =[NSURL URLWithString:urlString];
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
-    [videoWebView loadRequest:request];
-}
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    [activityIndicatorView startAnimating] ;
-    //[urlTextField setText:[webView superclass]]
-}
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [activityIndicatorView stopAnimating];
-}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    UIAlertView *alterview = [[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription]  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alterview show];
+    [[self videoWebView ] loadRequest:request];
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return YES;
+
+/// 接收到服务器跳转请求之后调用 (服务器端redirect)，不一定调用
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"didReceiveServerRedirectForProvisionalNavigation");
+    //NSLog(@"%@",navigation);
 }
+
+/// 1 在发送请求之前，决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    NSLog(@"decidePolicyForNavigationAction");
+    NSString *urlString = [[navigationAction.request URL] absoluteString];
+    
+    urlString = [urlString stringByRemovingPercentEncoding];
+    //    NSLog(@"urlString=%@",urlString);
+    // 用://截取字符串
+    NSArray *urlComps = [urlString componentsSeparatedByString:@"://"];
+    if ([urlComps count]) {
+        // 获取协议头
+        NSString *protocolHead = [urlComps objectAtIndex:0];
+        NSLog(@"protocolHead=%@",protocolHead);
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+
+
+
+/// 2 页面开始加载
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%@",navigation);
+    [[self activityIndicatorView]  startAnimating] ;
+}
+
+/// 3 在收到服务器的响应头，根据response相关信息，决定是否跳转。decisionHandler必须调用，来决定是否跳转，参数WKNavigationActionPolicyCancel取消跳转，WKNavigationActionPolicyAllow允许跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+    NSLog(@"%s", __FUNCTION__);
+    // 允许跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+    //NSLog(@"%@",webView);
+}
+
+/// 4 开始获取到网页内容时返回
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%@",navigation);
+}
+/// 5 页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%@",navigation);
+    [[self activityIndicatorView] stopAnimating];
+}
+/// 页面加载失败时调用
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%@",navigation);
+    [[self activityIndicatorView]  stopAnimating];
+}
+
+
+/// message: 收到的脚本信息.
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+
+
 /*
  #pragma mark - Navigation
  

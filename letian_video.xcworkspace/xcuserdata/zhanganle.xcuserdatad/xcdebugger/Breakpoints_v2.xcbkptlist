@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "letian_video/Controller/Browser/BrowserViewController.m"
-            timestampString = "494091430.954214"
+            timestampString = "494177725.338047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-textFieldShouldReturn:"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-webView:didStartProvisionalNavigation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "letian_video/Controller/Browser/BrowserViewController.m"
-            timestampString = "494091430.954214"
+            timestampString = "494177725.338047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-buttonPress:"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "-webView:didFinishNavigation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "letian_video/Controller/Browser/BrowserViewController.m"
-            timestampString = "494091430.954214"
+            timestampString = "494177725.338047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-buttonPress:"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "-webView:didFinishNavigation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "letian_video/Controller/Browser/BrowserViewController.m"
-            timestampString = "494091430.954214"
+            timestampString = "494177725.338047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "-webViewDidStartLoad:"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "-webView:didCommitNavigation:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "letian_video/Controller/Browser/BrowserViewController.m"
+            timestampString = "494177725.338047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "-webView:didFailProvisionalNavigation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
